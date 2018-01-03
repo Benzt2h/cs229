@@ -22,7 +22,7 @@ if($english_Day=="Monday"){
 }else {
 	$th_day = "อาทิตย์";
 }
-printf("In English : ",date("l"),"<BR>");
+printf("In English : ".date("l")."<BR>");
 printf("In thai : $th_day <BR>");
 ?>
 </body>
