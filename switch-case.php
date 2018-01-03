@@ -27,8 +27,11 @@ switch($english_Day)
 	case "Saturday";
 			$th_day = "เสาร์";
 			break;
-	
+	default;
+		$th_day = "อาทิตย์";
 	}
+	printf("In English : ".date("l")."<BR>");
+    printf("In thai : $th_day <BR>");
 ?>
 </body>
 </html>
