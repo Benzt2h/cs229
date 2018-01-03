@@ -17,7 +17,7 @@ if($english_Day=="Monday"){
 	$th_day = "พฤหัส";
 }else if($english_Day=="Friday"){
 	$th_day = "ศุกร์";
-}else if($english_Day=="Saturnday"){
+}else if($english_Day=="Saturday"){
 	$th_day = "เสาร์";
 }else {
 	$th_day = "อาทิตย์";
