@@ -6,7 +6,7 @@
 </head>
 <body>
 <?php
-echo "".max(2,5,9,1,5,3,4);
+echo max(2,5,9,1,5,3,4);
 echo "<BR>".log(5);
 echo "<BR>".Asin(0.5);
 echo "<BR>".deg2rad(60);
