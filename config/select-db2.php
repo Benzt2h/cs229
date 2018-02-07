@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
@@ -14,19 +14,24 @@ $dbname="driver_license";
 $link=mysql_connect($host,$username,$password) or die("ไม่สามารถติดต่อฐานข้อมูลได้ในขณะนึ้");
 mysql_select_db($dbname,$link) or die("ไม่สามารถติดต่อฐานข้อมูลได้ในขณะนึ้");
 
+$tbQuestion = $_POST['tbQuestion'];
+$tbAnswer = $_POST['tbAnswer'];
+$tbWronganswer1 = $_POST['tbWronganswer1'];
+$tbWronganswer2 = $_POST['tbWronganswer2'];
+$tbWronganswer3 = $_POST['tbWronganswer3'];
+
+$sql_Insert = "INSERT INTO question (question,answer,wrong_answer1,wrong_answer2,wrong_answer3) VALUES ('$tbQuestion','$tbAnswer','$tbWronganswer1','$tbWronganswer2','$tbWronganswer3')";
+$result_Insert = mysql_query($sql_Insert);
+
 $sql_Select ="SELECT * FROM question WHERE 1";
 $result_Select = mysql_query($sql_Select);
 
-$sql_Insert ="INSERT INTO question (question,answer,wrong_answer1,wrong_answer2,wrong_answer3) values ($tbQuestion,$tbAnswer,$tbWronganswer1,$tbWronganswer2,$tbWronganswer3)";
-//$result_Insert = mysql_query($sql_Insert);
-$dbquery = mysql_db_query($dbname, $sql_Insert);
 echo "เพิ่มข้อมูล";
+
+echo "<BR>";
+echo "<BR>";
 ?>
 
-<?
-echo "<BR>";
-echo "<BR>";
-?>
 <table width="1270" border="1">
   <tbody>
     <tr>
