@@ -19,9 +19,19 @@ $tbAnswer = $_POST['tbAnswer'];
 $tbWronganswer1 = $_POST['tbWronganswer1'];
 $tbWronganswer2 = $_POST['tbWronganswer2'];
 $tbWronganswer3 = $_POST['tbWronganswer3'];
+$tbDelete = $_POST['tbDelete'];
+$tbNumber = $_POST['tbNumber'];
 
-$sql_Insert = "INSERT INTO question (question,answer,wrong_answer1,wrong_answer2,wrong_answer3) VALUES ('$tbQuestion','$tbAnswer','$tbWronganswer1','$tbWronganswer2','$tbWronganswer3')";
-$result_Insert = mysql_query($sql_Insert);
+if($tbDelete==null&&$tbNumber==null){
+	$sql_Insert = "INSERT INTO question (question,answer,wrong_answer1,wrong_answer2,wrong_answer3) VALUES ('$tbQuestion','$tbAnswer','$tbWronganswer1','$tbWronganswer2','$tbWronganswer3')";
+	$result_Insert = mysql_query($sql_Insert);
+}else if($tbDelete!=""){
+	$sql_Delete = "DELETE FROM question WHERE number='$tbDelete'";
+	$result_Delete = mysql_query($sql_Delete);	
+}else {
+	$sql_Edit = "UPDATE question SET question = '$tbQuestion', answer= '$tbAnswer', wrong_answer1 = '$tbWronganswer1',  wrong_answer2 = '$tbWronganswer2', wrong_answer3 = '$tbWronganswer3' WHERE number='$tbNumber'";
+	$result_Edit = mysql_query($sql_Edit);
+}
 
 $sql_Select ="SELECT * FROM question WHERE 1";
 $result_Select = mysql_query($sql_Select);
