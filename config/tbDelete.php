@@ -16,6 +16,6 @@ echo "เพิ่มข้อมูล";
         <input name="tbDelete" type="text" id="tbDelete" size="200"></td>
   </tbody>
 </table>
-<input type="Submit" name="Submit" value="ลบข้อมูล">
+<input name="submit" onclick="return confirm('คุณต้องการลบข้อมูลที่เลือก')" type="submit" value="Delete" />
 </body>
 </html>
